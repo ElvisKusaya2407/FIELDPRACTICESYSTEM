@@ -1,0 +1,53 @@
+/* creating the database called FIELD_PRACTICE */
+create database field_practice;
+
+/* open the database  */
+use field_practice;
+
+/* creating the department table */
+create table department
+(
+deptID varchar(50) unique,
+deptCode varchar(50) not null,
+deptName text not null,
+primary key(deptID)
+)engine=innoDB;
+
+/*creating the organization table   */
+create table organization 
+(
+orgID varchar(100) not null unique,
+orgName text not null,
+capacity int(4) not null  default 100,
+ntaLevel int(2)  not null,
+department varchar(50),
+primary key(orgID),
+foreign key(department) references department(deptID) on update cascade on delete set null
+)engine=innoDB;
+
+
+/* creating the student table    */
+create table student
+(
+studentID varchar(100) not null unique,
+fullname text not null,
+gender enum('male', 'female') not null,
+nationality varchar(100) not null default 'Tanzanian',
+department varchar(50),
+organization varchar(50),
+password varchar(20),
+confirmPassword varchar(20),
+primary key(studentID),
+foreign key(organization) references organization(orgID) on update cascade on delete cascade,
+foreign key(department) references department(deptID) on update cascade on delete cascade
+)engine=innoDB;
+
+/* creating the supervisor table */
+create table supervisor 
+(
+supID  varchar(50) not null unique,
+supName text not null,
+primary key(supID)
+)engine=innoDB;
+
+
