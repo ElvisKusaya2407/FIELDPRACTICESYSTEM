@@ -36,7 +36,7 @@ public class Fieldattendance extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ATTENDANCE REPORT FOR STUDENTS STUDYING");
+        jLabel1.setText("FIELD ATTENDANCE REPORT FOR STUDENTS");
         
         @SuppressWarnings("rawtypes")
 		JComboBox stucb = new JComboBox();
